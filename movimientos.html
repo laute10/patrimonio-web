@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrimonio - Movimientos</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="header__contenedor">
+      <p class="logo">PATRIMONIO</p>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">☰</button>
+      <nav class="nav" id="menu-principal" aria-label="Menú principal">
+        <a href="inicio.html" class="nav__link">INICIO</a>
+        <a href="ahorros.html" class="nav__link">AHORROS</a>
+        <a href="tarjetas.html" class="nav__link">TARJETAS</a>
+        <a href="movimientos.html" class="nav__link nav__link--activo">MOVIMIENTOS</a>
+        <a href="estadisticas.html" class="nav__link">ESTADISTICAS</a>
+        <a href="configuracion.html" class="nav__link">CONFIGURACIÓN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="contenido">
+
+    <section class="pagina-header">
+      <h1>MOVIMIENTOS</h1>
+
+      <div class="barra-busqueda">
+        <input type="text" id="buscador-movimientos" class="buscador" aria-label="Buscar movimiento" placeholder="BUSCAR MOVIMIENTO...">
+        <button type="button" class="btn--filtros" id="btn-filtros">FILTROS</button>
+      </div>
+
+      <div class="filtros-tipo" id="filtros-tipo">
+        <button type="button" class="filtro-tab filtro-tab--activo" data-filtro="todos">TODOS</button>
+        <button type="button" class="filtro-tab" data-filtro="ingreso">INGRESOS</button>
+        <button type="button" class="filtro-tab" data-filtro="gasto">GASTOS</button>
+        <button type="button" class="filtro-tab" data-filtro="ahorro">AHORROS</button>
+        <button type="button" class="filtro-tab" data-filtro="tarjeta">TARJETA</button>
+      </div>
+    </section>
+
+    <section class="grupo-fecha" id="lista-movimientos-contenedor">
+      <p class="grupo-fecha__mes">SEPTIEMBRE 2026</p>
+
+      <div class="grupo-dia">
+        <p class="grupo-fecha__dia">02 DE SEPTIEMBRE</p>
+        <div class="lista-movimientos">
+          <button type="button" class="item-movimiento" data-tipo="ingreso" data-texto="sueldo ingreso">
+            <span class="item-movimiento__icono item-movimiento__icono--ingreso">↑</span>
+            <div class="item-movimiento__info">
+              <span class="item-movimiento__titulo">SUELDO</span>
+              <span class="item-movimiento__subtitulo">INGRESO - 02/09/2026</span>
+            </div>
+            <span class="item-movimiento__monto item-movimiento__monto--ingreso">+ $ 700.000</span>
+          </button>
+
+          <button type="button" class="item-movimiento" data-tipo="gasto" data-texto="supermercado gasto">
+            <span class="item-movimiento__icono item-movimiento__icono--gasto">↓</span>
+            <div class="item-movimiento__info">
+              <span class="item-movimiento__titulo">SUPERMERCADO</span>
+              <span class="item-movimiento__subtitulo">GASTO - 02/09/2026</span>
+            </div>
+            <span class="item-movimiento__monto item-movimiento__monto--gasto">- $ 45.500</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="grupo-dia">
+        <p class="grupo-fecha__dia">01 DE SEPTIEMBRE</p>
+        <div class="lista-movimientos">
+          <button type="button" class="item-movimiento" data-tipo="ahorro" data-texto="departamento ahorro agregado">
+            <span class="item-movimiento__icono item-movimiento__icono--ahorro">$</span>
+            <div class="item-movimiento__info">
+              <span class="item-movimiento__titulo">DEPARTAMENTO</span>
+              <span class="item-movimiento__subtitulo">AHORRO AGREGADO - 01/09/2026</span>
+            </div>
+            <span class="item-movimiento__monto item-movimiento__monto--ahorro">$ 50.000</span>
+          </button>
+
+          <button type="button" class="item-movimiento" data-tipo="tarjeta" data-texto="facultad compra con tarjeta">
+            <span class="item-movimiento__icono item-movimiento__icono--tarjeta">C</span>
+            <div class="item-movimiento__info">
+              <span class="item-movimiento__titulo">FACULTAD</span>
+              <span class="item-movimiento__subtitulo">COMPRA CON TARJETA - 01/09/2026</span>
+            </div>
+            <span class="item-movimiento__monto item-movimiento__monto--tarjeta">$ 25.300</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estado vacío: se muestra cuando ningún movimiento coincide con los filtros -->
+    <section class="estado-vacio oculto" id="estado-vacio">
+      <div class="estado-vacio__icono">!</div>
+      <p class="estado-vacio__titulo">NO HAY MOVIMIENTOS</p>
+      <p class="estado-vacio__subtitulo">NO ENCONTRAMOS MOVIMIENTOS CON ESE FILTRO O BÚSQUEDA</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Patrimonio · Proyecto final de Programación 4 · Universidad Champagnat</p>
+  </footer>
+
+  <script src="js/menu.js" defer></script>
+  <script src="js/movimientos.js" defer></script>
+</body>
+</html>
