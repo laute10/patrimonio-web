@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrimonio - Inicio</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="header__contenedor">
+      <p class="logo">PATRIMONIO</p>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">☰</button>
+      <nav class="nav" id="menu-principal" aria-label="Menú principal">
+        <a href="inicio.html" class="nav__link nav__link--activo">INICIO</a>
+        <a href="ahorros.html" class="nav__link">AHORROS</a>
+        <a href="tarjetas.html" class="nav__link">TARJETAS</a>
+        <a href="movimientos.html" class="nav__link">MOVIMIENTOS</a>
+        <a href="estadisticas.html" class="nav__link">ESTADISTICAS</a>
+        <a href="configuracion.html" class="nav__link">CONFIGURACIÓN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="contenido">
+
+    <section class="page-intro">
+      <h1>BUENOS DIAS</h1>
+      <p class="subtitulo">ESTE ES EL RESUMEN DE TU SITUACION FINANCIERA</p>
+    </section>
+
+    <section class="resumen">
+      <div class="resumen__total">
+        <span class="etiqueta">PATRIMONIO TOTAL</span>
+        <span class="monto" id="total-patrimonio">$1.750.000</span>
+      </div>
+
+      <div class="resumen__detalle">
+        <div class="tarjeta-mini">
+          <span class="etiqueta">DISPONIBLE</span>
+          <span class="monto monto--disponible" id="total-disponible">$650.000</span>
+        </div>
+        <div class="tarjeta-mini">
+          <span class="etiqueta">AHORROS</span>
+          <span class="monto monto--ahorros">$850.000</span>
+        </div>
+        <div class="tarjeta-mini">
+          <span class="etiqueta">TARJETA</span>
+          <span class="monto monto--tarjeta">$250.000</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="acciones">
+      <h2>REGISTRAR</h2>
+      <div class="acciones__botones">
+        <button type="button" class="btn btn--primario" id="btn-registrar-gasto">+ REGISTRAR GASTO</button>
+        <button type="button" class="btn btn--secundario" id="btn-registrar-ingreso">+ REGISTRAR INGRESO</button>
+      </div>
+    </section>
+
+    <section class="movimientos">
+      <div class="movimientos__header">
+        <h2>ULTIMOS MOVIMIENTOS</h2>
+        <a href="movimientos.html" class="link">VER TODOS</a>
+      </div>
+
+      <p class="aviso-exito oculto" id="aviso-registro" role="status"></p>
+
+      <ul class="movimientos__lista" id="lista-movimientos">
+        <li class="movimiento">
+          <span class="movimiento__punto movimiento__punto--ingreso"></span>
+          <div class="movimiento__info">
+            <span class="movimiento__titulo">SUELDO</span>
+            <span class="movimiento__subtitulo">INGRESO - HOY</span>
+          </div>
+          <span class="movimiento__monto movimiento__monto--positivo">+ $700.000</span>
+        </li>
+
+        <li class="movimiento">
+          <span class="movimiento__punto movimiento__punto--gasto"></span>
+          <div class="movimiento__info">
+            <span class="movimiento__titulo">SUPERMERCADO</span>
+            <span class="movimiento__subtitulo">GASTO - HOY</span>
+          </div>
+          <span class="movimiento__monto movimiento__monto--negativo">- $45.500</span>
+        </li>
+
+        <li class="movimiento">
+          <span class="movimiento__punto movimiento__punto--tarjeta"></span>
+          <div class="movimiento__info">
+            <span class="movimiento__titulo">FACULTAD</span>
+            <span class="movimiento__subtitulo">TARJETA - AYER</span>
+          </div>
+          <span class="movimiento__monto">$25.300</span>
+        </li>
+
+        <li class="movimiento">
+          <span class="movimiento__punto movimiento__punto--ahorro"></span>
+          <div class="movimiento__info">
+            <span class="movimiento__titulo">DEPARTAMENTO</span>
+            <span class="movimiento__subtitulo">AHORRO - AYER</span>
+          </div>
+          <span class="movimiento__monto">$50.000</span>
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Patrimonio · Proyecto final de Programación 4 · Universidad Champagnat</p>
+  </footer>
+
+  <!-- Overlay oscuro detrás de los paneles -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Panel lateral: Registrar gasto -->
+  <aside class="panel" id="panel-gasto">
+    <div class="panel__header">
+      <h2 class="panel__titulo">REGISTRAR GASTO</h2>
+      <button type="button" class="panel__cerrar" data-cerrar-panel>X</button>
+    </div>
+
+    <p class="panel__descripcion">
+      REGISTRA UN NUEVO GASTO PARA ACTUALIZAR TU DINERO DISPONIBLE
+    </p>
+
+    <form id="form-gasto">
+      <div class="campo">
+        <label for="gasto-categoria">CATEGORÍA</label>
+        <select id="gasto-categoria" name="categoria">
+          <option value="supermercado">SUPERMERCADO</option>
+          <option value="transporte">TRANSPORTE</option>
+          <option value="facultad">FACULTAD</option>
+          <option value="ocio">OCIO</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="gasto-monto">MONTO</label>
+        <input type="number" id="gasto-monto" name="monto" placeholder="$ 0" min="0" step="1">
+        <p class="campo__error oculto" id="gasto-monto-error" role="alert"></p>
+      </div>
+
+      <div class="campo">
+        <label for="gasto-descripcion">DESCRIPCIÓN (OPCIONAL)</label>
+        <input type="text" id="gasto-descripcion" name="descripcion" placeholder="EJ. COMPRA SEMANAL">
+      </div>
+    </form>
+
+    <div class="panel__acciones">
+      <button type="submit" form="form-gasto" class="btn btn--primario">REGISTRAR GASTO</button>
+      <button type="button" class="btn btn--secundario btn--texto-secundario" data-cerrar-panel>CANCELAR</button>
+    </div>
+  </aside>
+
+  <!-- Panel lateral: Registrar ingreso -->
+  <aside class="panel" id="panel-ingreso">
+    <div class="panel__header">
+      <h2 class="panel__titulo">REGISTRAR INGRESO</h2>
+      <button type="button" class="panel__cerrar" data-cerrar-panel>X</button>
+    </div>
+
+    <p class="panel__descripcion">
+      REGISTRA UN NUEVO INGRESO PARA ACTUALIZAR TU DINERO DISPONIBLE
+    </p>
+
+    <form id="form-ingreso">
+      <div class="campo">
+        <label for="ingreso-categoria">CATEGORÍA</label>
+        <select id="ingreso-categoria" name="categoria">
+          <option value="sueldo">SUELDO</option>
+          <option value="freelance">FREELANCE</option>
+          <option value="regalo">REGALO</option>
+          <option value="otro">OTRO</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="ingreso-monto">MONTO</label>
+        <input type="number" id="ingreso-monto" name="monto" placeholder="$ 0" min="0" step="1">
+        <p class="campo__error oculto" id="ingreso-monto-error" role="alert"></p>
+      </div>
+
+      <div class="campo">
+        <label for="ingreso-descripcion">DESCRIPCIÓN (OPCIONAL)</label>
+        <input type="text" id="ingreso-descripcion" name="descripcion" placeholder="EJ. COMPRA SEMANAL">
+      </div>
+    </form>
+
+    <div class="panel__acciones">
+      <button type="submit" form="form-ingreso" class="btn btn--primario">REGISTRAR INGRESO</button>
+      <button type="button" class="btn btn--secundario btn--texto-secundario" data-cerrar-panel>CANCELAR</button>
+    </div>
+  </aside>
+
+  <script src="js/menu.js" defer></script>
+  <script src="js/validacion.js" defer></script>
+  <script src="js/inicio.js" defer></script>
+</body>
+</html>
