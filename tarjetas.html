@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrimonio - Tarjetas</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="header__contenedor">
+      <p class="logo">PATRIMONIO</p>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">☰</button>
+      <nav class="nav" id="menu-principal" aria-label="Menú principal">
+        <a href="inicio.html" class="nav__link">INICIO</a>
+        <a href="ahorros.html" class="nav__link">AHORROS</a>
+        <a href="tarjetas.html" class="nav__link nav__link--activo">TARJETAS</a>
+        <a href="movimientos.html" class="nav__link">MOVIMIENTOS</a>
+        <a href="estadisticas.html" class="nav__link">ESTADISTICAS</a>
+        <a href="configuracion.html" class="nav__link">CONFIGURACIÓN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="contenido">
+
+    <section class="pagina-header">
+      <h1>TARJETAS</h1>
+      <p class="subtitulo">ADMINISTRÁ TUS TARJETAS Y SUS PERÍODOS</p>
+      <button type="button" class="btn btn--primario" id="btn-agregar-tarjeta" style="width: 200px; margin-top: var(--espacio-2);">+ AGREGAR TARJETA</button>
+    </section>
+
+    <section>
+      <h2 style="font-size: 16px; font-weight: 600;">MIS TARJETAS</h2>
+
+      <div class="grilla-tarjetas">
+        <article class="tarjeta-principal">
+          <div class="tarjeta-principal__encabezado">
+            <div>
+              <p class="tarjeta-principal__nombre">VISA</p>
+              <p class="tarjeta-principal__periodo">PERIODO 08/26</p>
+            </div>
+            <span class="badge badge--abierta">ABIERTA</span>
+          </div>
+
+          <div class="tarjeta-principal__deuda">
+            <span class="etiqueta">DEUDA</span>
+            <span class="monto">$545.325</span>
+          </div>
+
+          <p class="tarjeta-principal__aviso">2 PERÍODOS PENDIENTES DE PAGO</p>
+
+          <div class="tarjeta-principal__pie">
+            <a href="resumen-tarjeta.html" class="btn btn--primario btn--chico">VER RESUMEN</a>
+          </div>
+        </article>
+
+        <article class="tarjeta-principal">
+          <div class="tarjeta-principal__encabezado">
+            <div>
+              <p class="tarjeta-principal__nombre">MASTERCARD</p>
+              <p class="tarjeta-principal__periodo">PERIODO 08/26</p>
+            </div>
+            <span class="badge badge--abierta">ABIERTA</span>
+          </div>
+
+          <div class="tarjeta-principal__deuda">
+            <span class="etiqueta">DEUDA</span>
+            <span class="monto">$320.000</span>
+          </div>
+
+          <div class="tarjeta-principal__pie">
+            <a href="resumen-tarjeta.html" class="btn btn--primario btn--chico">VER RESUMEN</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="font-size: 16px; font-weight: 600;">HISTORIAL DE PERÍODOS</h2>
+
+      <div class="filtros-historial">
+        <select class="select-filtro" id="filtro-tarjeta" aria-label="Filtrar por tarjeta">
+          <option value="todas">TODAS LAS TARJETAS</option>
+          <option value="visa">VISA</option>
+          <option value="mastercard">MASTERCARD</option>
+        </select>
+
+        <select class="select-filtro" id="filtro-estado" aria-label="Filtrar por estado">
+          <option value="todos">TODOS LOS ESTADOS</option>
+          <option value="cerradas">CERRADAS</option>
+          <option value="pagadas">PAGADAS</option>
+        </select>
+      </div>
+
+      <div id="lista-historial">
+        <article class="historial-item" data-tarjeta="visa" data-estado="pagadas">
+          <div class="historial-item__info">
+            <span class="historial-item__nombre">VISA</span>
+            <span class="historial-item__periodo">AGOSTO 2026</span>
+          </div>
+          <div class="historial-item__derecha">
+            <span class="badge badge--pagada">PAGADA</span>
+            <span class="historial-item__monto">$ 280.000</span>
+          </div>
+        </article>
+
+        <article class="historial-item" data-tarjeta="mastercard" data-estado="cerradas">
+          <div class="historial-item__info">
+            <span class="historial-item__nombre">MASTERCARD</span>
+            <span class="historial-item__periodo">AGOSTO 2026</span>
+          </div>
+          <div class="historial-item__derecha">
+            <span class="badge badge--cerrada">CERRADA</span>
+            <span class="historial-item__monto">$ 320.000</span>
+          </div>
+        </article>
+
+        <article class="historial-item" data-tarjeta="visa" data-estado="pagadas">
+          <div class="historial-item__info">
+            <span class="historial-item__nombre">VISA</span>
+            <span class="historial-item__periodo">JULIO 2026</span>
+          </div>
+          <div class="historial-item__derecha">
+            <span class="badge badge--pagada">PAGADA</span>
+            <span class="historial-item__monto">$ 150.000</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Patrimonio · Proyecto final de Programación 4 · Universidad Champagnat</p>
+  </footer>
+
+  <!-- Overlay y panel lateral -->
+  <div class="overlay" id="overlay"></div>
+
+  <aside class="panel" id="panel-agregar-tarjeta">
+    <div class="panel__header">
+      <h2 class="panel__titulo">AGREGAR TARJETA</h2>
+      <button type="button" class="panel__cerrar" data-cerrar-panel>X</button>
+    </div>
+
+    <p class="panel__descripcion">REGISTRÁ UNA TARJETA PARA COMENZAR A ADMINISTRAR SUS PERÍODOS Y CONSUMOS</p>
+
+    <form id="form-agregar-tarjeta">
+      <div class="campo">
+        <label for="tarjeta-nombre">NOMBRE DE LA TARJETA</label>
+        <input type="text" id="tarjeta-nombre" name="nombre" placeholder="EJ. VISA">
+      </div>
+
+      <div class="campo">
+        <label for="tarjeta-limite">LÍMITE DE CRÉDITO</label>
+        <input type="number" id="tarjeta-limite" name="limite" placeholder="$ 0" min="0" step="1">
+      </div>
+    </form>
+
+    <div class="panel__acciones">
+      <button type="submit" form="form-agregar-tarjeta" class="btn btn--primario">AGREGAR TARJETA</button>
+      <button type="button" class="btn btn--secundario btn--texto-secundario" data-cerrar-panel>CANCELAR</button>
+    </div>
+  </aside>
+
+  <script src="js/menu.js" defer></script>
+  <script src="js/tarjetas.js" defer></script>
+</body>
+</html>
