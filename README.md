@@ -11,7 +11,7 @@ Entrega: **Ejercitación 3.1 — Del diseño al código**.
 
 ## Enlaces
 
-- 🌐 Sitio publicado: [COMPLETAR con el enlace de GitHub Pages o Netlify]
+- 🌐 Sitio publicado: https://laute10.github.io/patrimonio-web/
 - 🎨 Prototipo en Figma: https://www.figma.com/design/mAGqEaUlhmfvLpwQLg1DWA/Design-System-Patrimonio
 
 ## ¿Qué problema resuelve?
