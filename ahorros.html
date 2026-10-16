@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrimonio - Ahorros</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="header__contenedor">
+      <p class="logo">PATRIMONIO</p>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">☰</button>
+      <nav class="nav" id="menu-principal" aria-label="Menú principal">
+        <a href="inicio.html" class="nav__link">INICIO</a>
+        <a href="ahorros.html" class="nav__link nav__link--activo">AHORROS</a>
+        <a href="tarjetas.html" class="nav__link">TARJETAS</a>
+        <a href="movimientos.html" class="nav__link">MOVIMIENTOS</a>
+        <a href="estadisticas.html" class="nav__link">ESTADISTICAS</a>
+        <a href="configuracion.html" class="nav__link">CONFIGURACIÓN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="contenido">
+
+    <section class="pagina-header pagina-header--con-acciones">
+      <div class="pagina-header__texto">
+        <h1>AHORROS</h1>
+        <p>ORGANIZÁ TUS AHORROS Y SEGUÍ EL PROGRESO DE TUS OBJETIVOS</p>
+      </div>
+      <div class="pagina-header__acciones">
+        <button type="button" class="btn btn--secundario" id="btn-crear-objetivo">+ CREAR OBJETIVO</button>
+        <button type="button" class="btn btn--primario" id="btn-agregar-ahorro">+ AGREGAR AHORRO</button>
+      </div>
+    </section>
+
+    <section class="tarjetas-resumen">
+      <div class="tarjeta-stat">
+        <span class="etiqueta">TOTAL AHORRADO</span>
+        <span class="valor">$ 850.000</span>
+        <span class="detalle">DINERO RESERVADO EN AHORROS</span>
+      </div>
+      <div class="tarjeta-stat">
+        <span class="etiqueta">OBJETIVOS ACTIVOS</span>
+        <span class="valor">4</span>
+        <span class="detalle">OBJETIVOS EN CURSO</span>
+      </div>
+      <div class="tarjeta-stat">
+        <span class="etiqueta">PROGRESO GENERAL</span>
+        <span class="valor">42%</span>
+        <span class="detalle">DEL TOTAL DE TUS OBJETIVOS</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="seccion-header">
+        <h2>MIS OBJETIVOS</h2>
+        <a href="todos-los-objetivos.html" class="link">VER TODOS →</a>
+      </div>
+
+      <div class="grilla-objetivos">
+        <article class="objetivo-card">
+          <div class="objetivo-card__encabezado">
+            <span class="objetivo-card__icono">🏠</span>
+            <div>
+              <p class="objetivo-card__nombre">DEPARTAMENTO</p>
+              <p class="objetivo-card__tipo">OBJETIVO DE AHORRO</p>
+            </div>
+          </div>
+          <p class="objetivo-card__monto">$ 850.000</p>
+          <p class="objetivo-card__meta">DE $2.000.000</p>
+          <div class="barra-progreso">
+            <div class="barra-progreso__relleno" style="width: 42%;"></div>
+          </div>
+          <span class="objetivo-card__porcentaje">42% COMPLETADO</span>
+        </article>
+
+        <article class="objetivo-card">
+          <div class="objetivo-card__encabezado">
+            <span class="objetivo-card__icono">🚗</span>
+            <div>
+              <p class="objetivo-card__nombre">AUTO</p>
+              <p class="objetivo-card__tipo">OBJETIVO DE AHORRO</p>
+            </div>
+          </div>
+          <p class="objetivo-card__monto">$ 600.000</p>
+          <p class="objetivo-card__meta">DE $1.500.000</p>
+          <div class="barra-progreso">
+            <div class="barra-progreso__relleno" style="width: 40%;"></div>
+          </div>
+          <span class="objetivo-card__porcentaje">40% COMPLETADO</span>
+        </article>
+
+        <article class="objetivo-card">
+          <div class="objetivo-card__encabezado">
+            <span class="objetivo-card__icono">✈️</span>
+            <div>
+              <p class="objetivo-card__nombre">VACACIONES</p>
+              <p class="objetivo-card__tipo">OBJETIVO DE AHORRO</p>
+            </div>
+          </div>
+          <p class="objetivo-card__monto">$ 300.000</p>
+          <p class="objetivo-card__meta">DE $1.000.000</p>
+          <div class="barra-progreso">
+            <div class="barra-progreso__relleno" style="width: 30%;"></div>
+          </div>
+          <span class="objetivo-card__porcentaje">30% COMPLETADO</span>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="seccion-header">
+        <h2>MOVIMIENTOS RECIENTES</h2>
+        <a href="movimientos.html" class="link">VER TODOS →</a>
+      </div>
+
+      <div class="lista-recientes" style="margin-top: var(--espacio-4);">
+        <div class="recientes-item">
+          <span class="recientes-item__icono recientes-item__icono--positivo">+</span>
+          <div class="recientes-item__info">
+            <span class="recientes-item__titulo">AHORRO AGREGADO</span>
+            <span class="recientes-item__subtitulo">A: DEPARTAMENTO - AYER</span>
+          </div>
+          <span class="recientes-item__monto recientes-item__monto--positivo">$ 50.000</span>
+        </div>
+
+        <div class="recientes-item">
+          <span class="recientes-item__icono recientes-item__icono--positivo">+</span>
+          <div class="recientes-item__info">
+            <span class="recientes-item__titulo">AHORRO AGREGADO</span>
+            <span class="recientes-item__subtitulo">A: VACACIONES - AYER</span>
+          </div>
+          <span class="recientes-item__monto recientes-item__monto--positivo">$ 30.000</span>
+        </div>
+
+        <div class="recientes-item">
+          <span class="recientes-item__icono recientes-item__icono--negativo">−</span>
+          <div class="recientes-item__info">
+            <span class="recientes-item__titulo">RETIRO DE AHORRO</span>
+            <span class="recientes-item__subtitulo">DE: EMERGENCIAS - 28 AGO</span>
+          </div>
+          <span class="recientes-item__monto recientes-item__monto--negativo">$ 10.000</span>
+        </div>
+
+        <div class="recientes-item">
+          <span class="recientes-item__icono recientes-item__icono--positivo">+</span>
+          <div class="recientes-item__info">
+            <span class="recientes-item__titulo">AHORRO AGREGADO</span>
+            <span class="recientes-item__subtitulo">A: AUTO - 25 AGO</span>
+          </div>
+          <span class="recientes-item__monto recientes-item__monto--positivo">$ 75.000</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Patrimonio · Proyecto final de Programación 4 · Universidad Champagnat</p>
+  </footer>
+
+  <!-- Overlay oscuro detrás de los paneles -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Panel lateral: Crear objetivo -->
+  <aside class="panel" id="panel-crear-objetivo">
+    <div class="panel__header">
+      <h2 class="panel__titulo">CREAR OBJETIVO</h2>
+      <button type="button" class="panel__cerrar" data-cerrar-panel>X</button>
+    </div>
+
+    <p class="panel__descripcion">CREÁ UN OBJETIVO PARA ORGANIZAR TUS AHORROS</p>
+
+    <form id="form-crear-objetivo">
+      <div class="campo">
+        <label for="objetivo-nombre">NOMBRE DEL OBJETIVO</label>
+        <input type="text" id="objetivo-nombre" name="nombre" placeholder="EJ. VIAJE A BRASIL">
+      </div>
+
+      <div class="campo">
+        <label for="objetivo-monto">MONTO OBJETIVO</label>
+        <input type="number" id="objetivo-monto" name="monto" placeholder="$ 0" min="0" step="1">
+      </div>
+    </form>
+
+    <div class="panel__acciones">
+      <button type="submit" form="form-crear-objetivo" class="btn btn--primario">CREAR OBJETIVO</button>
+      <button type="button" class="btn btn--secundario btn--texto-secundario" data-cerrar-panel>CANCELAR</button>
+    </div>
+  </aside>
+
+  <!-- Panel lateral: Agregar ahorro -->
+  <aside class="panel" id="panel-agregar-ahorro">
+    <div class="panel__header">
+      <h2 class="panel__titulo">AGREGAR AHORRO</h2>
+      <button type="button" class="panel__cerrar" data-cerrar-panel>X</button>
+    </div>
+
+    <p class="panel__descripcion">RESERVÁ DINERO DISPONIBLE EN UNO DE LOS OBJETIVOS</p>
+
+    <form id="form-agregar-ahorro">
+      <div class="campo">
+        <label for="ahorro-objetivo">OBJETIVO</label>
+        <select id="ahorro-objetivo" name="objetivo">
+          <option value="departamento">DEPARTAMENTO</option>
+          <option value="auto">AUTO</option>
+          <option value="vacaciones">VACACIONES</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="ahorro-monto">MONTO A AGREGAR</label>
+        <input type="number" id="ahorro-monto" name="monto" placeholder="$ 0" min="0" step="1">
+      </div>
+
+      <div class="campo">
+        <label for="ahorro-descripcion">DESCRIPCIÓN (OPCIONAL)</label>
+        <input type="text" id="ahorro-descripcion" name="descripcion" placeholder="EJ. PARTE DE MI SUELDO MENSUAL">
+      </div>
+    </form>
+
+    <div class="panel__acciones">
+      <button type="submit" form="form-agregar-ahorro" class="btn btn--primario">AGREGAR AHORRO</button>
+      <button type="button" class="btn btn--secundario btn--texto-secundario" data-cerrar-panel>CANCELAR</button>
+    </div>
+  </aside>
+
+  <script src="js/menu.js" defer></script>
+  <script src="js/ahorros.js" defer></script>
+</body>
+</html>
