@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrimonio - Estadísticas</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="header__contenedor">
+      <p class="logo">PATRIMONIO</p>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">☰</button>
+      <nav class="nav" id="menu-principal" aria-label="Menú principal">
+        <a href="inicio.html" class="nav__link">INICIO</a>
+        <a href="ahorros.html" class="nav__link">AHORROS</a>
+        <a href="tarjetas.html" class="nav__link">TARJETAS</a>
+        <a href="movimientos.html" class="nav__link">MOVIMIENTOS</a>
+        <a href="estadisticas.html" class="nav__link nav__link--activo">ESTADISTICAS</a>
+        <a href="configuracion.html" class="nav__link">CONFIGURACIÓN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="contenido">
+
+    <section class="pagina-header">
+      <h1>ESTADÍSTICAS</h1>
+      <p class="subtitulo">ANALIZÁ LA EVOLUCIÓN DE TUS FINANZAS</p>
+    </section>
+
+    <select class="selector-periodo" id="selector-periodo" aria-label="Período de las estadísticas">
+      <option value="este-mes">ESTE MES</option>
+      <option value="mes-anterior">MES ANTERIOR</option>
+      <option value="ultimos-3">ÚLTIMOS 3 MESES</option>
+      <option value="ultimos-6">ÚLTIMOS 6 MESES</option>
+      <option value="este-anio">ESTE AÑO</option>
+    </select>
+
+    <section>
+      <h2 style="font-size: 16px; font-weight: 600; margin-bottom: var(--espacio-3);">RESUMEN FINANCIERO</h2>
+      <div class="tarjetas-resumen-financiero">
+        <div class="tarjeta-resumen-chica">
+          <span class="etiqueta">INGRESOS</span>
+          <span class="monto">$ 700.000</span>
+        </div>
+        <div class="tarjeta-resumen-chica">
+          <span class="etiqueta">GASTOS</span>
+          <span class="monto">$ 420.000</span>
+        </div>
+        <div class="tarjeta-resumen-chica">
+          <span class="etiqueta">AHORRO</span>
+          <span class="monto">$ 280.000</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-grafico">
+      <h2>GASTOS POR CATEGORÍA</h2>
+      <div class="grafico-barras-h">
+        <div class="barra-h-fila">
+          <span>SUPERMERCADO</span>
+          <div class="barra-h-pista"><div class="barra-h-relleno" style="width: 100%;"></div></div>
+          <span>$ 180.000</span>
+        </div>
+        <div class="barra-h-fila">
+          <span>FACULTAD</span>
+          <div class="barra-h-pista"><div class="barra-h-relleno" style="width: 68%;"></div></div>
+          <span>$ 122.000</span>
+        </div>
+        <div class="barra-h-fila">
+          <span>TRANSPORTE</span>
+          <div class="barra-h-pista"><div class="barra-h-relleno" style="width: 40%;"></div></div>
+          <span>$ 72.000</span>
+        </div>
+        <div class="barra-h-fila">
+          <span>OCIO</span>
+          <div class="barra-h-pista"><div class="barra-h-relleno" style="width: 25%;"></div></div>
+          <span>$ 46.000</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-grafico">
+      <h2>EVOLUCIÓN DEL PATRIMONIO</h2>
+      <svg class="grafico-svg" viewBox="0 0 760 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Evolución del patrimonio entre junio y septiembre">
+        <!-- Línea base del eje -->
+        <line x1="40" y1="170" x2="720" y2="170" class="grafico-svg__eje"></line>
+
+        <!-- Línea que conecta los 4 valores del patrimonio -->
+        <polyline points="60,140 280,118 500,72 720,30" class="grafico-svg__linea"></polyline>
+
+        <!-- Punto + valor + mes, uno por cada mes -->
+        <g>
+          <circle cx="60" cy="140" r="5" class="grafico-svg__punto"></circle>
+          <text x="60" y="126" class="grafico-svg__valor">$1,3M</text>
+          <text x="60" y="190" class="grafico-svg__etiqueta">JUN</text>
+        </g>
+        <g>
+          <circle cx="280" cy="118" r="5" class="grafico-svg__punto"></circle>
+          <text x="280" y="104" class="grafico-svg__valor">$1,4M</text>
+          <text x="280" y="190" class="grafico-svg__etiqueta">JUL</text>
+        </g>
+        <g>
+          <circle cx="500" cy="72" r="5" class="grafico-svg__punto"></circle>
+          <text x="500" y="58" class="grafico-svg__valor">$1,6M</text>
+          <text x="500" y="190" class="grafico-svg__etiqueta">AGO</text>
+        </g>
+        <g>
+          <circle cx="720" cy="30" r="5" class="grafico-svg__punto"></circle>
+          <text x="720" y="16" class="grafico-svg__valor">$1,75M</text>
+          <text x="720" y="190" class="grafico-svg__etiqueta">SEP</text>
+        </g>
+      </svg>
+    </section>
+
+    <section class="panel-grafico">
+      <h2>INGRESOS VS. GASTOS</h2>
+      <div class="grafico-leyenda">
+        <span><span class="leyenda-punto leyenda-punto--ingreso"></span>INGRESOS</span>
+        <span><span class="leyenda-punto leyenda-punto--gasto"></span>GASTOS</span>
+      </div>
+      <div class="grafico-barras-dobles">
+        <div class="barras-dobles-grupo">
+          <div class="barras-dobles-par">
+            <div class="barras-dobles-barra barras-dobles-barra--ingreso" style="height: 85%;"></div>
+            <div class="barras-dobles-barra barras-dobles-barra--gasto" style="height: 55%;"></div>
+          </div>
+          <span class="barra-v-etiqueta">JUL</span>
+        </div>
+        <div class="barras-dobles-grupo">
+          <div class="barras-dobles-par">
+            <div class="barras-dobles-barra barras-dobles-barra--ingreso" style="height: 90%;"></div>
+            <div class="barras-dobles-barra barras-dobles-barra--gasto" style="height: 60%;"></div>
+          </div>
+          <span class="barra-v-etiqueta">AGO</span>
+        </div>
+        <div class="barras-dobles-grupo">
+          <div class="barras-dobles-par">
+            <div class="barras-dobles-barra barras-dobles-barra--ingreso" style="height: 100%;"></div>
+            <div class="barras-dobles-barra barras-dobles-barra--gasto" style="height: 60%;"></div>
+          </div>
+          <span class="barra-v-etiqueta">SEP</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-grafico">
+      <div class="seccion-header" style="margin-bottom: var(--espacio-5);">
+        <h2 style="margin-bottom: 0;">PROGRESO DE OBJETIVOS</h2>
+        <a href="ahorros.html" class="link">VER TODOS →</a>
+      </div>
+      <div class="lista-progreso-objetivos">
+        <div class="progreso-objetivo-fila">
+          <div class="encabezado">
+            <span>AUTO</span>
+            <span class="monto">40% · $ 1.000.000 / $ 2.500.000</span>
+          </div>
+          <div class="barra-progreso"><div class="barra-progreso__relleno" style="width: 40%;"></div></div>
+        </div>
+        <div class="progreso-objetivo-fila">
+          <div class="encabezado">
+            <span>CELULAR</span>
+            <span class="monto">65% · $ 390.000 / $ 600.000</span>
+          </div>
+          <div class="barra-progreso"><div class="barra-progreso__relleno" style="width: 65%;"></div></div>
+        </div>
+        <div class="progreso-objetivo-fila">
+          <div class="encabezado">
+            <span>VACACIONES</span>
+            <span class="monto">25% · $ 500.000 / $ 2.000.000</span>
+          </div>
+          <div class="barra-progreso"><div class="barra-progreso__relleno" style="width: 25%;"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel-grafico">
+      <h2>DISTRIBUCIÓN DEL PATRIMONIO</h2>
+      <div class="distribucion-contenido">
+        <svg class="grafico-dona" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Distribución del patrimonio entre disponible, ahorros y tarjetas">
+          <!-- Disponible: 40% del círculo -->
+          <circle cx="100" cy="100" r="70" class="grafico-dona__segmento grafico-dona__segmento--disponible"
+                  stroke-dasharray="175.93 439.82" stroke-dashoffset="0"></circle>
+          <!-- Ahorros: 30% del círculo, arranca donde terminó Disponible -->
+          <circle cx="100" cy="100" r="70" class="grafico-dona__segmento grafico-dona__segmento--ahorros"
+                  stroke-dasharray="131.95 439.82" stroke-dashoffset="-175.93"></circle>
+          <!-- Tarjetas: 30% del círculo, arranca donde terminó Ahorros -->
+          <circle cx="100" cy="100" r="70" class="grafico-dona__segmento grafico-dona__segmento--tarjeta"
+                  stroke-dasharray="131.95 439.82" stroke-dashoffset="-307.88"></circle>
+          <text x="100" y="95" class="grafico-dona__total">$ 1.000.000</text>
+          <text x="100" y="115" class="grafico-dona__total-etiqueta">PATRIMONIO</text>
+        </svg>
+
+      <div class="leyenda-distribucion">
+        <div class="leyenda-distribucion-item">
+          <span><span class="leyenda-punto" style="background-color: var(--color-primario);"></span>DISPONIBLE</span>
+          <span>$ 400.000</span>
+        </div>
+        <div class="leyenda-distribucion-item">
+          <span><span class="leyenda-punto" style="background-color: var(--color-ahorro);"></span>AHORROS</span>
+          <span>$ 300.000</span>
+        </div>
+        <div class="leyenda-distribucion-item">
+          <span><span class="leyenda-punto" style="background-color: var(--color-tarjeta);"></span>TARJETAS</span>
+          <span>$ 300.000</span>
+        </div>
+      </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Patrimonio · Proyecto final de Programación 4 · Universidad Champagnat</p>
+  </footer>
+
+</body>
+</html>

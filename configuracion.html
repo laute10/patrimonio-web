@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrimonio - Configuración</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="header">
+    <div class="header__contenedor">
+      <p class="logo">PATRIMONIO</p>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">☰</button>
+      <nav class="nav" id="menu-principal" aria-label="Menú principal">
+        <a href="inicio.html" class="nav__link">INICIO</a>
+        <a href="ahorros.html" class="nav__link">AHORROS</a>
+        <a href="tarjetas.html" class="nav__link">TARJETAS</a>
+        <a href="movimientos.html" class="nav__link">MOVIMIENTOS</a>
+        <a href="estadisticas.html" class="nav__link">ESTADISTICAS</a>
+        <a href="configuracion.html" class="nav__link nav__link--activo">CONFIGURACIÓN</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main" id="contenido">
+
+    <section class="pagina-header">
+      <h1>CONFIGURACIÓN</h1>
+      <p class="subtitulo">ADMINISTRÁ TU CUENTA Y PREFERENCIAS</p>
+    </section>
+
+    <section class="config-seccion">
+      <h2>MI CUENTA</h2>
+      <div class="config-card">
+        <div class="config-card__datos">
+          <div class="config-dato">
+            <span class="etiqueta">NOMBRE:</span>
+            <span class="valor">LAUTARO</span>
+          </div>
+          <div class="config-dato">
+            <span class="etiqueta">CORREO ELECTRÓNICO:</span>
+            <span class="valor">lautiespejo10@gmail.com</span>
+          </div>
+        </div>
+        <button type="button" class="btn btn--secundario btn--texto-secundario btn--chico" id="btn-editar-datos">EDITAR DATOS</button>
+      </div>
+    </section>
+
+    <section class="config-seccion">
+      <h2>PREFERENCIAS</h2>
+      <div class="config-card">
+        <div class="config-dato">
+          <span class="etiqueta">MONEDA:</span>
+          <span class="valor">PESOS ARGENTINOS (ARS)</span>
+          <p class="descripcion">MONEDA UTILIZADA PARA MOSTRAR TUS VALORES Y MOVIMIENTOS</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="config-seccion">
+      <h2>SESIÓN</h2>
+      <div class="config-card">
+        <span class="config-card__sesion-texto">CERRAR SESIÓN</span>
+        <button type="button" class="btn btn--destructivo btn--chico" id="btn-cerrar-sesion">CERRAR SESIÓN</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Patrimonio · Proyecto final de Programación 4 · Universidad Champagnat</p>
+  </footer>
+
+  <!-- Overlay compartido (paneles y modal) -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Panel lateral: Editar datos -->
+  <aside class="panel" id="panel-editar-datos">
+    <div class="panel__header">
+      <h2 class="panel__titulo">EDITAR DATOS</h2>
+      <button type="button" class="panel__cerrar" data-cerrar-panel>X</button>
+    </div>
+
+    <form id="form-editar-datos">
+      <div class="campo">
+        <label for="dato-nombre">NOMBRE</label>
+        <input type="text" id="dato-nombre" name="nombre" value="LAUTARO">
+      </div>
+
+      <div class="campo">
+        <label for="dato-correo">CORREO ELECTRÓNICO</label>
+        <input type="email" id="dato-correo" name="correo" value="lautiespejo10@gmail.com">
+      </div>
+    </form>
+
+    <div class="panel__acciones">
+      <button type="submit" form="form-editar-datos" class="btn btn--primario">GUARDAR CAMBIOS</button>
+      <button type="button" class="btn btn--secundario btn--texto-secundario" data-cerrar-panel>CANCELAR</button>
+    </div>
+  </aside>
+
+  <!-- Modal: confirmar cierre de sesión -->
+  <div class="modal oculto" id="modal-cerrar-sesion">
+    <div class="modal__contenido">
+      <p class="modal__titulo">¿CERRAR SESIÓN?</p>
+      <p class="modal__texto">VAS A SALIR DE TU CUENTA Y VOLVER A LA PANTALLA DE INICIO DE SESIÓN</p>
+      <div class="modal__acciones">
+        <button type="button" class="btn btn--secundario btn--texto-secundario" id="btn-cancelar-cierre">CANCELAR</button>
+        <a href="index.html" class="btn btn--destructivo" style="background-color: var(--color-gasto-texto); color: var(--color-superficie); border: none;">CERRAR SESIÓN</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/menu.js" defer></script>
+  <script src="js/configuracion.js" defer></script>
+</body>
+</html>
