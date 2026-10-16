@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patrimonio - Crear cuenta</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__contenedor">
+      <p class="logo">PATRIMONIO</p>
+    </div>
+  </header>
+
+  <main class="auth-layout">
+    <div class="tarjeta-auth">
+      <h1 class="tarjeta-auth__titulo">CREAR CUENTA</h1>
+      <p class="tarjeta-auth__subtitulo">CREÁ TU CUENTA PARA COMENZAR A ADMINISTRAR TUS FINANZAS</p>
+
+      <form id="form-crear-cuenta" novalidate>
+
+        <div class="campo">
+          <label for="cuenta-nombre">NOMBRE</label>
+          <input type="text" id="cuenta-nombre" name="nombre" placeholder="INGRESA TU NOMBRE" required>
+          <p class="campo__error oculto" id="cuenta-nombre-error" role="alert"></p>
+        </div>
+
+        <div class="campo">
+          <label for="cuenta-correo">CORREO ELECTRÓNICO</label>
+          <input type="email" id="cuenta-correo" name="correo" placeholder="INGRESÁ TU CORREO" required>
+          <p class="campo__error oculto" id="cuenta-correo-error" role="alert"></p>
+        </div>
+
+        <div class="campo">
+          <label for="cuenta-contrasena">CONTRASEÑA</label>
+          <input type="password" id="cuenta-contrasena" name="contrasena" placeholder="CREÁ TU CONTRASEÑA" required>
+          <p class="campo__error oculto" id="cuenta-contrasena-error" role="alert"></p>
+        </div>
+
+        <div class="campo">
+          <label for="cuenta-confirmar">CONFIRMAR CONTRASEÑA</label>
+          <input type="password" id="cuenta-confirmar" name="confirmar" placeholder="REPETÍ TU CONTRASEÑA" required>
+          <p class="campo__error oculto" id="cuenta-confirmar-error" role="alert"></p>
+        </div>
+
+        <button type="submit" class="btn btn--primario btn--block">CREAR CUENTA</button>
+      </form>
+
+      <p class="auth-pie">
+        ¿YA TENES UNA CUENTA?
+        <a href="index.html">INICIAR SESIÓN</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>Patrimonio · Proyecto final de Programación 4 · Universidad Champagnat</p>
+  </footer>
+
+  <script src="js/validacion.js" defer></script>
+  <script src="js/crear-cuenta.js" defer></script>
+</body>
+</html>
