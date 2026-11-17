@@ -13,6 +13,7 @@ Entrega: **Ejercitación 3.1 — Del diseño al código**.
 
 - 🌐 Sitio publicado: https://laute10.github.io/patrimonio-web/
 - 🎨 Prototipo en Figma: https://www.figma.com/design/mAGqEaUlhmfvLpwQLg1DWA/Design-System-Patrimonio
+- ⏭️ Versiones siguientes: [patrimonio-react](https://github.com/laute10/patrimonio-react) (React, [publicada en Netlify](https://patrimonio-react-laute.netlify.app)) y [prog4-proyecto-patrimonio-final](https://github.com/laute10/prog4-proyecto-patrimonio-final) (full-stack con Node.js y Express)
 
 ## ¿Qué problema resuelve?
 
